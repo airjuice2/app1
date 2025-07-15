@@ -5,9 +5,6 @@ const useStore = create((set) => ({
     ordersData: [],
     setOrderId: (orderId) => set(() => ({ orderId })),
     setOrdersData: (order) => set((state) => {
-
-        
-
         return ({ ordersData: [...state.ordersData, order] })
     })
 }))

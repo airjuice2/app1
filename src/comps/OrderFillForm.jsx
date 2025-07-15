@@ -4,11 +4,13 @@ export default function OrderFillForm() {
 
     const { ordersData } = useStore()
 
-    // console.log(ordersData);
-
     return (
         <>
-            <div></div>
+            <div>
+                {
+                    // ordersData.map()
+                }
+            </div>
         </>
     )
 }

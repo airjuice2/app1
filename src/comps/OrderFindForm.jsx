@@ -8,7 +8,7 @@ export default function OrderFindForm() {
     const queryClient = useQueryClient()
 
     const [localOrderId, setLocalOrderId] = useState(74671)
-    const { orderId, setOrderId, setOrdersData } = useStore()
+    const { orderId, ordersData, setOrderId, setOrdersData } = useStore()
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['orders', orderId],
         queryFn: () => {
@@ -27,8 +27,8 @@ export default function OrderFindForm() {
     })
 
     useEffect(() => {
-        if (data.length > 0) {
-            setOrdersData(data)
+        if (data.length > 0) {            
+            if (ordersData.filter(e => e[0]?.orderid == data[0]?.orderid).length < 1) setOrdersData(data)
         }
     }, [data, setOrdersData])
 
