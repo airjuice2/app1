@@ -5,8 +5,8 @@ import hostname from '../hostname'
 
 export default function OrderFindForm() {
 
-    const [localOrderId, setLocalOrderId] = useState(19)
-    const { orderId, orders, setOrderId, setOrders } = useStore()
+    const [localOrderId, setLocalOrderId] = useState(74671)
+    const { orderId, setOrderId, setOrdersData } = useStore()
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['orders', orderId],
         queryFn: () => {
@@ -17,16 +17,17 @@ export default function OrderFindForm() {
                 method: 'POST',
                 body: formData,
             }).then(res => res.json())
+        },
+        initialData: {
+            data: []
         }
     })
 
     useEffect(() => {
-        if (data) {
-            setOrders(data)
+        if (data.length > 0) {
+            setOrdersData(data)
         }
-    }, [data, setOrders])
-
-    if (orders) console.log(orders)
+    }, [data, setOrdersData])
 
     if (isLoading) return 'Загрузка...';
     if (error) return 'Произошла ошибка: ' + error.message
@@ -37,11 +38,11 @@ export default function OrderFindForm() {
                 setOrderId(localOrderId)
                 refetch()
             }}>
-                <input type="number"
+                <input type='number'
                     value={localOrderId}
                     onChange={e => setLocalOrderId(e.target.value)}
                 />
-                <button type="submit">Найти заказ</button>
+                <button type='submit'>Найти заказ</button>
             </form>
         </>
     )

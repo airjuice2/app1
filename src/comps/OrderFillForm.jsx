@@ -2,11 +2,13 @@ import useStore from '../state/store'
 
 export default function OrderFillForm() {
 
-    const { orderId } = useStore()
+    const { ordersData } = useStore()
+
+    console.log(ordersData);
 
     return (
         <>
-            <div>{orderId}</div>
+            <div></div>
         </>
     )
 }
