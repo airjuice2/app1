@@ -1,18 +1,31 @@
-import OrderFindForm from './OrderFindForm'
-import OrderFillForm from './OrderFillForm'
+import { Container, Row, Col } from 'react-bootstrap';
+import OrderFindForm from './OrderFindForm';
+import OrderFillForm from './OrderFillForm';
 
 export default function App() {
   return (
     <>
-      <div>
-        <OrderFindForm />
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <OrderFindForm />
+          </Col>
+        </Row>
+      </Container>
 
-      <hr />
+      <div style={{
+        height: '1px',
+        backgroundColor: '#dee2e6',
+        margin: '2rem 0'
+      }} />
 
-      <div>
-        <OrderFillForm />
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <OrderFillForm />
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

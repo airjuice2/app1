@@ -6,6 +6,11 @@ const useStore = create((set) => ({
     setOrderId: (orderId) => set(() => ({ orderId })),
     setOrdersData: (order) => set((state) => {
         return ({ ordersData: [...state.ordersData, order] })
+    }),
+    dropOrdersData: (orderId) => set((state) => {
+        return ({
+            ordersData: [...state.ordersData.flat().filter(e => e.orderid != orderId)]
+        })
     })
 }))
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
+
 import useStore from '../state/store'
 import hostname from '../hostname'
 
@@ -27,8 +29,10 @@ export default function OrderFindForm() {
     })
 
     useEffect(() => {
-        if (data.length > 0) {            
-            if (ordersData.filter(e => e[0]?.orderid == data[0]?.orderid).length < 1) setOrdersData(data)
+        if (data?.length > 0) {
+            if (ordersData.filter(e => e[0]?.orderid == data[0]?.orderid).length < 1) {
+                setOrdersData(data)
+            }
         }
     }, [data, setOrdersData])
 
@@ -36,20 +40,28 @@ export default function OrderFindForm() {
     if (error) return 'Произошла ошибка: ' + error.message
 
     return (
-        <>
-            <form onSubmit={e => {
-                e.preventDefault()
-                setOrderId(localOrderId)
-                refetch()
-                queryClient.removeQueries(['orders', localOrderId])
-
-            }}>
-                <input type='number'
-                    value={localOrderId}
-                    onChange={e => setLocalOrderId(e.target.value)}
-                />
-                <button type='submit'>Найти заказ</button>
-            </form>
-        </>
+        <Container className="mt-3">
+            <Row>
+                <Col xs={12} md={8} lg={4} className="ps-0">
+                    <Form onSubmit={e => {
+                        e.preventDefault();
+                        setOrderId(localOrderId);
+                        // refetch()
+                        queryClient.removeQueries(['orders', localOrderId]);
+                    }}>
+                        <InputGroup>
+                            <Form.Control
+                                type="number"
+                                value={localOrderId}
+                                onChange={(e) => setLocalOrderId(e.target.value)}
+                            />
+                            <Button variant="primary" type="submit">
+                                Найти заказ
+                            </Button>
+                        </InputGroup>
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
     )
 }
