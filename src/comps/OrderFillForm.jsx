@@ -46,123 +46,120 @@ export default function OrderFillForm() {
                             <Card.Body>
                                 {e.map((ee, ii) => {
                                     return (
-                                        <>
-                                            <Card className="mt-3" key={ii}>
-                                                <Card.Header>{ee.print_type} (слой №{ee.layerid}) мастер смены - Сова Е.А.</Card.Header>
-                                                <Card.Body>
-                                                    <Form>
-                                                        <Row>
-                                                            <Col md={6}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Пуск машины</Form.Label>
-                                                                    <Form.Control
-                                                                        type="datetime-local"
-                                                                        defaultValue={formatDateTime(today)}
-                                                                    />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={6}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Остановка машины</Form.Label>
-                                                                    <Form.Control
-                                                                        type="datetime-local"
-                                                                        defaultValue={formatDateTime(yesterday)}
-                                                                    />
-                                                                </Form.Group>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Заказчик</Form.Label>
-                                                                    <Form.Control type="text" placeholder="Заказчик" value={ee.company} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Материал</Form.Label>
-                                                                    <Form.Control type="text" placeholder="Материал" value={ee.material} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Ширина</Form.Label>
-                                                                    <Form.Control type="text" placeholder="Ширина" value={ee.width} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col md={6}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Выработано КГ</Form.Label>
-                                                                    <Form.Control
-                                                                        type="number"
-                                                                        value={0}
-                                                                        onChange={e => {
+                                        <Card className="mt-3" key={ii}>
+                                            <Card.Header>{ee.print_type} (слой №{ee.layerid}) мастер смены - Сова Е.А.</Card.Header>
+                                            <Card.Body>
+                                                <Form>
+                                                    <Row>
+                                                        <Col md={6}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Пуск машины</Form.Label>
+                                                                <Form.Control
+                                                                    type="datetime-local"
+                                                                    defaultValue={formatDateTime(today)}
+                                                                />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Остановка машины</Form.Label>
+                                                                <Form.Control
+                                                                    type="datetime-local"
+                                                                    defaultValue={formatDateTime(yesterday)}
+                                                                />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Заказчик</Form.Label>
+                                                                <Form.Control type="text" placeholder="Заказчик" value={ee.company} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Материал</Form.Label>
+                                                                <Form.Control type="text" placeholder="Материал" value={ee.material} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Ширина</Form.Label>
+                                                                <Form.Control type="text" placeholder="Ширина" value={ee.width} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col md={6}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Выработано КГ</Form.Label>
+                                                                <Form.Control
+                                                                    type="number"
+                                                                    value={0}
+                                                                    onChange={e => {
 
-                                                                        }}
-                                                                    />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={6}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Выработано М</Form.Label>
-                                                                    <Form.Control
-                                                                        type="number"
-                                                                        value={0}
-                                                                        onChange={e => {
+                                                                    }}
+                                                                />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={6}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Выработано М</Form.Label>
+                                                                <Form.Control
+                                                                    type="number"
+                                                                    value={0}
+                                                                    onChange={e => {
 
-                                                                        }}
-                                                                    />
-                                                                </Form.Group>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы настройка норма</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы настройка норма" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы настройка факт</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы настройка факт" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы настройка отклонение</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы настройка отклонение" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                        </Row>
-                                                        <Row>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы технические норма</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы технические норма" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы технические факт</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы технические факт" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                            <Col md={4}>
-                                                                <Form.Group className="mb-3">
-                                                                    <Form.Label>Отходы технические отклонение</Form.Label>
-                                                                    <Form.Control type="number" placeholder="Отходы технические отклонение" value={0} onChange={e => { }} />
-                                                                </Form.Group>
-                                                            </Col>
-                                                        </Row>
+                                                                    }}
+                                                                />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы настройка норма</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы настройка норма" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы настройка факт</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы настройка факт" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы настройка отклонение</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы настройка отклонение" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы технические норма</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы технические норма" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы технические факт</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы технические факт" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                        <Col md={4}>
+                                                            <Form.Group className="mb-3">
+                                                                <Form.Label>Отходы технические отклонение</Form.Label>
+                                                                <Form.Control type="number" placeholder="Отходы технические отклонение" value={0} onChange={e => { }} />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </Row>
 
-                                                    </Form>
-                                                </Card.Body>
-                                            </Card>
-                                            <hr />
-                                        </>
+                                                </Form>
+                                            </Card.Body>
+                                        </Card>
                                     )
                                 })}
                             </Card.Body>

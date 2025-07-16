@@ -3,7 +3,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
 
 import useStore from '../state/store'
-import hostname from '../hostname'
+import hostname from '../etc/hostname'
 
 export default function OrderFindForm() {
 
