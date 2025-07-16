@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom'
-import App from './App'
+import Header from './layouts/Header'
 
 export default function NotFound() {
     return (<>
         <div>
-            <Link to="/" element={<App />}>Домой</Link>
-            <h1>404</h1>
+            <Header />
+            <h1>404 Not Found</h1>
         </div>
     </>)
 }
