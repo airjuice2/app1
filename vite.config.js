@@ -10,6 +10,10 @@ export default defineConfig({
         replacement: '/src'
       },
       {
+        find: '@styles',
+        replacement: '/src/styles'
+      },
+      {
         find: '@commonTemplate',
         replacement: '/src/components/common'
       },

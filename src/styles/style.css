@@ -1,0 +1,93 @@
+/* header.css */
+.custom-header {
+  background-color: #edf2f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 0; /* Увеличенный padding */
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  border-bottom: 1px solid #cbd5e0;
+}
+
+.custom-header .container {
+  max-width: 1400px; /* Увеличенная максимальная ширина */
+  padding: 0 1.5rem; /* Оптимизированные отступы */
+}
+
+.custom-header .navbar-brand {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 1.35rem; /* Чуть крупнее логотип */
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0;
+}
+
+.custom-header .nav-link {
+  font-size: 0.95rem; /* Чуть крупнее текст */
+  margin: 0 0.5rem; /* Оптимизированные отступы */
+  padding: 0.75rem 0; /* Увеличенные padding */
+}
+
+/* content.css */
+body {
+  background-color: #f0f4f8;
+}
+
+.content-container {
+  background-color: #ffffff;
+  border-radius: 12px; /* Чуть больше скругление */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Более мягкая тень */
+  margin: 1.5rem auto; /* Отступы в rem */
+  padding: 2rem; /* Увеличенный padding */
+  max-width: 1400px; /* Соответствует шапке */
+  min-height: 60vh; /* Относительная высота */
+  border: 1px solid #dbe1e8;
+}
+
+/* Адаптивные breakpoints */
+@media (max-width: 1600px) {
+  .custom-header .container,
+  .content-container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .custom-header .container,
+  .content-container {
+    max-width: 100%;
+    padding: 0 1.25rem;
+  }
+  
+  .content-container {
+    margin: 1.25rem;
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-header {
+    padding: 0.5rem 0;
+  }
+  
+  .content-container {
+    margin: 1rem;
+    padding: 1.5rem;
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-header .container {
+    padding: 0 1rem;
+  }
+  
+  .content-container {
+    margin: 0.75rem;
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+  
+  .custom-header .nav-link {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+}
