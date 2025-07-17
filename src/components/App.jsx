@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Wrapper from './layouts/Wrapper'
+import Page from './route/Page'
 import Home from './Home'
 import Test from './Test'
 import NotFound from './NotFound'
@@ -14,9 +14,9 @@ export default function App() {
         <BrowserRouter>
             <QueryClientProvider client={queryClient}>
                 <Routes>
-                    <Route path="/" element={<Wrapper />}>
-                        <Route index element={<Home />}></Route>                        
-                        <Route path="/test" element={<Test />}></Route>                        
+                    <Route path="/" element={<Page />}>
+                        <Route index element={<Home />}></Route>
+                        <Route path="/test" element={<Test />}></Route>
                     </Route>
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>
