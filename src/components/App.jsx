@@ -15,7 +15,7 @@ import ReportForemanIndex from './reports/foreman/Index'
 export default function App() {
   return (<>
     <BrowserRouter>
-      <div className="d-flex flex-column min-vh-100">
+      <div className="app-wrapper">
         <Routes>
 
           <Route path='/' element={<WelcomeTemplate />}>
